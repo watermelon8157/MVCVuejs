@@ -2,5 +2,131 @@
 @{
     ViewBag.Title = "API";
 }
- 
+ <div class="container">
+     <ul class="nav nav-tabs" id="myTab" role="tablist">
+         <li class="nav-item">
+             <a class="nav-link" v-bind:class="[active]"  data-toggle="tab"  v-on:click="showTab" >API</a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link"  data-toggle="tab" v-on:click="showTab" >TEST</a>
+         </li>
+     </ul>
+     <div class="tab-content" id="myTabContent">
+         <template v-if="isShowAPI">
+             <div class="panel">
+                 <div class="panel-heading">From</div>
+                 <div class="panel-body">
+                     <div class="panel panel-warning">
+                         <div class="panel-heading">User Case</div>
+                         <div class="panel-body">
+                             <p>使用者註冊系統畫面。</p>
+                         </div>
+                     </div>
+                     <div class="panel panel-success">
+                         <div class="panel-heading">範例</div>
+                         <div class="panel-body">
+                             <components-form></components-form>
+                         </div>
+                     </div>
+                     <div class="panel panel-info">
+                         <div class="panel-heading">API</div>
+                         <div class="panel-body">
+                             <table class="table table-bordered">
+                                 <thead>
+                                     <tr>
+                                         <th>屬性</th>
+                                         <th>描述</th>
+                                         <th>類型</th>
+                                         <th>預設</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td>John</td>
+                                         <td>Doe</td>
+                                         <td>john@example.com</td>
+                                         <td>john@example.com</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Mary</td>
+                                         <td>Moe</td>
+                                         <td>mary@example.com</td>
+                                         <td>mary@example.com</td>
+                                     </tr>
+                                     <tr>
+                                         <td>July</td>
+                                         <td>Dooley</td>
+                                         <td>july@example.com</td>
+                                         <td>july@example.com</td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                     <div class="panel panel-info">
+                         <div class="panel-heading">事件</div>
+                         <div class="panel-body">
+                             <table class="table table-bordered">
+                                 <thead>
+                                     <tr>
+                                         <th>事件名稱</th>
+                                         <th>描述</th>
+                                         <th>參數</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td>John</td>
+                                         <td>Doe</td>
+                                         <td>john@example.com</td>
+                                     </tr>
+                                     <tr>
+                                         <td>Mary</td>
+                                         <td>Moe</td>
+                                         <td>mary@example.com</td>
+                                     </tr>
+                                     <tr>
+                                         <td>July</td>
+                                         <td>Dooley</td>
+                                         <td>july@example.com</td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </template>
+         <template v-else>
+             <!--components Tag 完整寫法-->
+             <components-form></components-form>
+             
+         </template>
+     </div>
+     
+</div>
+@section Script{
+    @Html.Partial(MVC.Components.Form.Views.Index)
+    <script type="text/javascript">
+       /* eslint-disable no-new */
+        new Vue({
+            el: '#app',
+            components: ComponentLibrary,
+            data: function () {
+                return {
+                    isShowAPI: true,
+                    active: 'active'
+                };
+            },
+            methods: {
+                //Vue Instance 在初始化時可設定選項物件，其中可設定 method，執行一些動作。
+                showTab: function () {
+                    this.isShowAPI = !this.isShowAPI;
+                }
+            }
+        })
+
+    </script>
+}
+
 

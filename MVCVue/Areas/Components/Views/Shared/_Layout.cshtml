@@ -11,6 +11,11 @@
         @RenderBody()
     </div>
     @Scripts.Render("~/scripts/js")
+    <script type="text/javascript">
+                Vue.use(VueRouter);
+                var ComponentLibrary = {};//建立component
+                var app_router = [];//建立router Array
+    </script>
     @RenderSection("Script", required: true)
 </body>
 </html>
