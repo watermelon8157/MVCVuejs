@@ -7,4 +7,4 @@
 - SPA(Single Page Application) + MVC partial view
 - Vue.js 常用進階
 
-- [PPT](https://vuejs.org/)
+- [PPT](https://github.com/watermelon8157/MVCVuejs/blob/master/MVC%2BVue.pptx)
