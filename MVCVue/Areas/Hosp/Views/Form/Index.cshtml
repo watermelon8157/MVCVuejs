@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+<script>
+
+    ComponentLibrary['hosp-form'] = function (resolve, reject) {
+        $.get("@Url.Action(MVC.Hosp.Form.template())").then(function (res) {
+            resolve({
+                template: res,
+                components: { 'components-form': ComponentLibrary['components-form'] },
+                data: function () {
+                    return {
+                        form: { City2:'1111'}
+                    }
+                },
+                mounted: function () {
+
+                }
+               , methods: {
+
+
+               }
+               , computed: {
+
+               }
+               , watch: {
+
+               }
+            })
+        });
+    };
+    app_router.push({
+        "path": "/@(nameof(MVC.Hosp.Form))",
+        "name": "@nameof(MVCVue.Areas.Hosp.Controllers.FormController)",
+        "component": ComponentLibrary['hosp-form']
+    });
+</script>

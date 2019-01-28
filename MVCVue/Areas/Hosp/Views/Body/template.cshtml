@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active"
+               data-toggle="tab">
+                <router-link v-bind:to="{name:'@nameof(MVCVue.Areas.Components.Controllers.DefaultController)'}">
+                    Home
+                </router-link>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"
+               data-toggle="tab">
+                <router-link v-bind:to="{name:'@nameof(MVCVue.Areas.Hosp.Controllers.FormController)'}">
+                    Form
+                </router-link>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent" style="margin-top:20px;">
+        <transition name="fade in">
+            <router-view>
+                <view-form slot="form"></view-form>
+            </router-view>
+        </transition>
+    </div>
+</div>

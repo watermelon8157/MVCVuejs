@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+<script>
+
+    ComponentLibrary['components-default'] = function (resolve, reject) {
+        $.get("@Url.Action(MVC.Components.Default.template())").then(function (res) {
+            resolve({
+                template: res,
+                props: {
+                    config: {
+                        type: Object,
+                        default: function () {
+                            return {
+
+                            }
+                        }
+                    }
+                },
+                router: new VueRouter({
+                    routes: app_router
+                }),
+                components: ComponentLibrary,
+                data: function () {
+                    return {
+
+                    }
+                },
+                mounted: function () {
+
+                }
+               , methods: {
+
+
+               }
+               , computed: {
+
+               }
+               , watch: {
+
+               }
+            })
+        });
+    };
+    app_router.push({
+        "path": "/@(nameof(MVC.Components.Default))",
+        "name": "@nameof(MVCVue.Areas.Components.Controllers.DefaultController)",
+        "component": ComponentLibrary['components-default']
+    });
+</script>

@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+<components-form v-bind:form="form">
+    <div class="form-row"
+         slot="form">
+        <div class="form-group col-md-6">
+            <label for="inputCity2">City2</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="inputCity2"
+                   v-model="form.City2">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState2">State2</label>
+            <select id="inputState2" 
+                    class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip2">Zip2</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="inputZip2">
+        </div>
+    </div>
+</components-form>

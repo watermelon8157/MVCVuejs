@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+<script>
+
+    ComponentLibrary['components-form'] = function (resolve, reject) {
+        $.get("@Url.Action(MVC.Components.Form.template())").then(function (res) {
+            resolve({
+                template: res,
+                props: ['form'], 
+                data: function () {
+                    return {
+                       
+                    }
+                },
+                mounted: function () {
+                    console.log(this.form.City2);
+                }
+               , methods: {
+                   btnClick: function () {
+                       console.log(this.form.City2);
+                   }
+
+               }
+               , computed: {
+                   
+               }
+               , watch: {
+                    
+               }
+            })
+        });
+    };
+ 
+</script>

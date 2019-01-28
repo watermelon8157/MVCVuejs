@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hosp-body></hosp-body>
+@section Script{
+    @Html.Partial(MVC.Hosp.Shared.Views._store) <!--Component-->
+    <script type="text/javascript">
+       /* eslint-disable no-new */
+        new Vue({
+            el: '#app',
+            components: { 'hosp-body': ComponentLibrary['hosp-body'] },
+            data: function () {
+                return {
+
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+}

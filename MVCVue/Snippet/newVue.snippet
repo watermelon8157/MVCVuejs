@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>newVue</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>newVue</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>vueName</ID>
+          <ToolTip>vue名稱</ToolTip>
+          <Default>vueName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>id</ID>
+          <ToolTip>vue使用的id</ToolTip>
+          <Default>id</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript" Delimiter="$"><![CDATA[var $vueName$_set_vm = {};//預設物件
+var $vueName$_vm = new Vue({
+    el: '#$id$', 
+    data: [ $vueName$_set_vm,{}].reduce(function (r, o) {
+            Object.keys(o).forEach(function (k) {
+                r[k] = o[k];
+            });
+            return r;
+        }, {}),
+    mounted: function () {
+        //元素已掛載，el被建立
+        $end$
+    },
+    methods: {
+        //Vue Instance 在初始化時可設定選項物件，其中可設定 method，執行一些動作。
+
+    },
+    computed:{
+       //當我們定義一個 computed，其相依 data 一變，computed 也會隨之更新。
+
+    },
+    watch:{
+       //當事件觸發時，瀏覽器叫事件處理器work。
+
+    }
+}); ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

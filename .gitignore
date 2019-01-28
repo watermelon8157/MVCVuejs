@@ -1,0 +1,10 @@
+*.suo
+/MVCVue/.vs
+/MVCVue/MVCVue/obj
+/MVCVue/MVCVue/bin
+/MVCVue/MVCVue/log
+
+/MVCVueLibrary/.vs
+/MVCVueLibrary/bin
+/MVCVueLibrary/obj
+ 

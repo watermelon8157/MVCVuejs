@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>thisHttpVue</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>thisHttpVue</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>data</ID>
+          <ToolTip>傳入controller 參數名稱</ToolTip>
+          <Default>data</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>model</ID>
+          <ToolTip>傳入物件 default: ''</ToolTip>
+          <Default>''</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Url</ID>
+          <ToolTip>Controller Url</ToolTip>
+          <Default>Url</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>method</ID>
+          <ToolTip>default: 'POST'</ToolTip>
+          <Default>post</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Object Editable="false">
+          <ID>http</ID>
+          <ToolTip>$http</ToolTip>
+          <Default>$http</Default>
+          <Function>
+          </Function>
+          <Type>
+          </Type>
+        </Object>
+      </Declarations>
+      <Code Language="javascript" Delimiter="$"><![CDATA[this.$http$.$method$('$Url$',{ $data$ : $model$ }).then(function(response) {
+    //response is ok...
+    $end$
+}, function(response) {
+   //response is not ok...
+
+});]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

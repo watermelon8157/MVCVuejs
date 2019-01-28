@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+<script>
+    //設定預設首頁 router
+    app_router.push({
+        "path": "*",
+        "redirect": "/@(nameof(MVC.Components.Default))"
+    })
+    ComponentLibrary['hosp-body'] =function (resolve, reject) {
+        $.get("@Url.Action(MVC.Hosp.Body.template())").then(function (res) {
+            resolve({
+                template: res,
+                props: {
+                    config: {
+                        type: Object,
+                        default: function () {
+                            return {
+
+                            }
+                        }
+                    }
+                },
+                router: new VueRouter({
+                    routes: app_router
+                }),
+                components: ComponentLibrary,
+                data: function () {
+                    return {
+                        form: {}
+                    }
+                },
+                mounted: function () {
+                    this.$nextTick(function () {
+                        window.addEventListener('resize', this.getWindowWidth);
+                        window.addEventListener('resize', this.getWindowHeight);
+                        //Init
+                        this.getWindowWidth()
+                        this.getWindowHeight()
+                    });
+                }
+               , methods: {
+                   //Vue Instance 在初始化時可設定選項物件，其中可設定 method，執行一些動作。
+                   getWindowWidth: function (event) {
+                       //取得寬度
+                       this.windowWidth = document.documentElement.clientWidth;
+                   },
+
+                   getWindowHeight: function (event) {
+                       //取得高度
+                       this.windowHeight = document.documentElement.clientHeight;
+
+                   },
+
+               }
+               , computed: {
+
+               }
+               , watch: {
+
+               },
+                beforeDestroy: function () {
+                    window.removeEventListener('resize', this.getWindowWidth);
+                    window.removeEventListener('resize', this.getWindowHeight);
+                }
+            })
+        });
+    };
+
+</script>

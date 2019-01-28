@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = null;
+}
+<script type="text/javascript">
+            Vue.use(VueRouter);
+            var ComponentLibrary = {};//建立component
+            var app_router = [];//建立router Array
+</script>
+<!--Components-->
+@Html.Partial(MVC.Components.Default.Views.Index)  <!-- Default Components-->
+@Html.Partial(MVC.Components.Form.Views.Index)  <!-- Form Components-->
+<!--View-->
+@Html.Partial(MVC.Hosp.Form.Views.Index)  <!-- Form View-->
+<!--Body-->
+@Html.Partial(MVC.Hosp.Body.Views.Index)  <!-- Body 畫面-->
